@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background-color: #121212;
+        font-family: sans-serif;
+      }
+      .header {
+        background-color: #333;
+        text-align: center;
+        color: white;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+      .calculator {
+        background-color: white;
+        margin: 40px auto;
+        max-width: 400px;
+        padding: 16px;
+        border-radius: 4px;
+      }
+      .display {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1.2em;
+      }
+      .keyboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+      button {
+        border: 0;
+        border-radius: 4px;
+        background-color: #efefef;
+        padding: 8px;
+        cursor: pointer;
+      }
+    </style>
+    <title>Calculadora - React Profissional</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const Header = () => {
+        return <div className='header'>Calculadora</div>;
+      };
+
+      const Calculator = () => {
+        return (
+          <div className='calculator'>
+            <div className='display'></div>
+            <div className='keyboard'>
+              <button>7</button>
+              <button>8</button>
+              <button>9</button>
+              <button>4</button>
+              <button>5</button>
+              <button>6</button>
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>0</button>
+            </div>
+          </div>
+        );
+      };
+
+      const App = () => {
+        return (
+          <div>
+            <Header />
+            <Calculator />
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.querySelector('#root'));
+    </script>
+  </body>
+</html>
